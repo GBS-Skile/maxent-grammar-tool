@@ -1,0 +1,9 @@
+			Id	OCP	*VcdGem
+			Id	OCP	*VcdGem
+bobu	bobu	1000		1	
+	bopu	0	1		
+webbu	webbu	1000			1
+	weppu	0	1		
+guddo	guddo	500		1	1
+	gutto	500	1		
+	kutto	0	2		

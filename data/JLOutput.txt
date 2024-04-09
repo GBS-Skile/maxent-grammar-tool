@@ -1,0 +1,31 @@
+
+Input: bobu	Id	OCP	*VcdGem
+bobu	1000.0	0.0	1.0	0.0	
+bopu	0.0	1.0	0.0	0.0	
+
+Input: webbu	Id	OCP	*VcdGem
+webbu	1000.0	0.0	0.0	1.0	
+weppu	0.0	1.0	0.0	0.0	
+
+Input: guddo	Id	OCP	*VcdGem
+guddo	500.0	0.0	1.0	1.0	
+gutto	500.0	1.0	0.0	0.0	
+kutto	0.0	2.0	0.0	0.0	
+feature Id had user-specified MU = 0.0 and SIGMA2 = 1.0E7.
+feature OCP had user-specified MU = 0.0 and SIGMA2 = 1.0E7.
+feature *VcdGem had user-specified MU = 0.0 and SIGMA2 = 1.0E7.
+all other features retained default MU and SIGMA2.
+
+
+|weights| after optimization:
+Id (mu=0.0, sigma^2=1.0E7)	36.651564963689346
+OCP (mu=0.0, sigma^2=1.0E7)	18.32578245252341
+*VcdGem (mu=0.0, sigma^2=1.0E7)	18.32578245252341
+Input:	Candidate:	Observed:	Predicted:
+bobu	bobu	1000.0	0.9999999890045306
+bobu	bopu	0.0	1.0995469395126557E-8
+webbu	webbu	1000.0	0.9999999890045306
+webbu	weppu	0.0	1.0995469395126557E-8
+guddo	guddo	500.0	0.5000000146606318
+guddo	gutto	500.0	0.4999999853393681
+guddo	kutto	0.0	6.0450176711414E-17

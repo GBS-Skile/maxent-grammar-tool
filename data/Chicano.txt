@@ -1,0 +1,8 @@
+			*CT	Max-Pre-V	Max-Fin	Max
+			*CT	Max-Pre-V	Max-Fin	Max
+lost#apples	lost apples	5500	1			
+	los apples	4500		1		1
+lost##	lost	6300	1			
+	los	3700			1	1
+lost#books	lost books	3800	1			
+	los books	6200				1
