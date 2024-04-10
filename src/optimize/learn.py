@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.optimize import Bounds, minimize
+from scipy.optimize import Bounds, OptimizeResult, minimize
 
 from model.tableaux import Tableaux
 from optimize.regularizer import GaussianRegularizer
@@ -13,7 +13,7 @@ def gradient(beta, tbx: Tableaux, reg: GaussianRegularizer):
     return tbx.grad(beta) + reg.grad(beta)
 
 
-def learn(beta0, tbx, reg):
+def learn(beta0, tbx, reg) -> OptimizeResult:
     return minimize(
         objective,
         beta0,

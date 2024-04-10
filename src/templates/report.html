@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxEnt Grammar Tool</title>
+</head>
+<body>
+    <h2>Optimization Report</h2>
+    <!-- Tableaux -->
+    <!-- Constraint -->
+    <!-- Weights -->
+    <p>
+        <b>Optimizer message: </b>{{ report.opt_result.message }}<br />
+        <b>Loss: </b>{{ '%.6g' | format(report.opt_result.fun) }}<br />
+        <b>Gradient Norm: </b>{{ '%.6g' | format(report.grad_norm()) }}<br />
+        <b>success: </b>{{ report.opt_result.success }}<br />
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for feature, weight in report.weights() %}
+            <tr>
+                <td>{{ feature }}</td>
+                <td>{{ '%.6f' | format(-weight) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Prediction -->
+    <table>
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Candidate</th>
+                <th>Observed</th>
+                <th>Predicted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cand in report.candidates() %}
+            <tr>
+                <td>{{ cand.input }}</td>
+                <td>{{ cand.output }}</td>
+                <td>{{ '%.6g' | format(cand.frequency) }}</td>
+                <td>{{ '%.6g' | format(cand.probability) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

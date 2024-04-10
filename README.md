@@ -1,4 +1,11 @@
+### TODO
 
+- [ ] Input file validation
+- [ ] Pretty output format (at least original)
+- [ ] Deployment (Maybe docker - requirements.txt)
 
-TODO: Simple web server 만들기
-적당한 결과 출력
+### Further Challenges
+
+- [ ] Inline modification
+- [ ] More visualization (e.g. LaTeX rendering)
+- [ ] Hyperparameter tuning (especially about optimization technique)

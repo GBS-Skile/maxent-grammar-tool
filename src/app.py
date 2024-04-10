@@ -1,9 +1,10 @@
 # FLASK_APP='src/app.py' flask run
 import numpy as np
-from flask import Flask, request
+from flask import Flask, render_template, request
 
 from model.tableaux import Tableaux
 from model.priors import Priors
+from model.report import Report
 from optimize.regularizer import GaussianRegularizer
 from optimize.learn import learn
 
@@ -22,7 +23,8 @@ def static_file():
         reg = GaussianRegularizer(priors, tableaux.feature_names)
         beta0 = -5 * np.ones(len(tableaux.features))
 
-        return str(learn(beta0, tableaux, reg))
+        report = Report(tableaux, learn(beta0, tableaux, reg))
+        return render_template("report.html", report=report)
 
     return app.send_static_file("index.html")
 

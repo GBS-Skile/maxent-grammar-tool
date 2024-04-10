@@ -23,7 +23,7 @@ class Example:
     freqs: NDArray[np.float64]  # (n,)
     violations: NDArray[np.float64]  # (n, p)
 
-    def predict(self, beta):
+    def predict(self, beta) -> NDArray[np.float64]:
         a = np.exp(self.violations @ beta)
         return a / a.sum()
 
@@ -60,13 +60,14 @@ class Tableaux:
         indice.append(len(df))
         examples = []
         for i in range(len(indice) - 1):
-            tabular = df.iloc[indice[i] : indice[i + 1], 1:].fillna(0)
+            tabular = df.iloc[indice[i] : indice[i + 1], 1:]
+            matrix = tabular.iloc[:, 1:].astype(np.float64).fillna(0.0)
             examples.append(
                 Example(
                     underlyings[i],
                     tabular.iloc[:, 0].tolist(),
-                    tabular.iloc[:, 1].to_numpy(),
-                    tabular.iloc[:, 2:].to_numpy().astype(np.float64),
+                    matrix.iloc[:, 0].to_numpy(),
+                    matrix.iloc[:, 1:].to_numpy(),
                 )
             )
 
