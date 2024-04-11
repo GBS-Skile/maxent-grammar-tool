@@ -1,4 +1,4 @@
-# FLASK_APP='src/app.py' flask run
+# FLASK_APP='main.py' flask run
 import numpy as np
 from flask import Flask, render_template, request
 
